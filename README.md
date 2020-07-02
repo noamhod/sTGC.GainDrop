@@ -16,4 +16,5 @@ where,
 - the -y argument is the height of the rectangle
 - the -c argument is the centre of the rectangle in the form of x0,y0
 - the -z argument is the threshold current above which you want to calculate the baseline
+- the -l argument is just decifing if the z-axis is plotted in log scale for the 2D plots
 The calculation of the area of the blob as well as the average gain-drop in that blob will be done in this step and the rectangle you’ve chosen will be shown on the plot.

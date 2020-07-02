@@ -16,6 +16,10 @@ argus = parser.parse_args()
 fname = argus.f
 ngap  = argus.g
 
+fnameout = fname
+fnameout = fnameout.replace("root/","pdf/")
+fnameout = fnameout.replace(".root","_")
+
 Lx    = -1
 Ly    = -1
 x0    = -1
@@ -64,18 +68,18 @@ if(logz): ROOT.gPad.SetLogz()
 h2.Draw("colz")
 h2.GetYaxis().UnZoom()
 ROOT.gPad.UnZoomed()
-cnv.SaveAs("gaindrop_2d.pdf")
+cnv.SaveAs(fnameout+"gaindrop_2d.pdf")
 if(examine):
-   cnv.SaveAs("gaindrop.pdf")
+   cnv.SaveAs(fnameout+"gaindrop.pdf")
    quit()
 else:
-   cnv.SaveAs("gaindrop.pdf(")
+   cnv.SaveAs(fnameout+"gaindrop.pdf(")
 
 cnv = TCanvas("cnv","",500,500)
 ROOT.gPad.SetTicks(1,1)
 h1X.Draw("hist")
-cnv.SaveAs("gaindrop_1d.pdf")
-cnv.SaveAs("gaindrop.pdf")
+cnv.SaveAs(fnameout+"gaindrop_1d.pdf")
+cnv.SaveAs(fnameout+"gaindrop.pdf")
 
 h1Xslice = h1X.Clone("sliceX")
 h1Xslice.Reset()
@@ -86,8 +90,8 @@ for bx in range(h1Xslice.GetNbinsX()+1):
 cnv = TCanvas("cnv","",500,500)
 ROOT.gPad.SetTicks(1,1)
 h1Xslice.Draw("hist")
-cnv.SaveAs("gaindrop_slice.pdf")
-cnv.SaveAs("gaindrop.pdf")
+cnv.SaveAs(fnameout+"gaindrop_slice.pdf")
+cnv.SaveAs(fnameout+"gaindrop.pdf")
 
 
 
@@ -158,8 +162,8 @@ h2.GetYaxis().UnZoom()
 ROOT.gPad.UnZoomed()
 if(logz): ROOT.gPad.SetLogz()
 rectangle.Draw("same")
-cnv.SaveAs("gaindrop_2d_anomaly.pdf")
-cnv.SaveAs("gaindrop.pdf")
+cnv.SaveAs(fnameout+"gaindrop_2d_anomaly.pdf")
+cnv.SaveAs(fnameout+"gaindrop.pdf")
 
 cnv = TCanvas("cnv","",500,500)
 ROOT.gPad.SetTicks(1,1)
@@ -170,8 +174,8 @@ if(logz): ROOT.gPad.SetLogz()
 h2Anomal.Draw("scat same")
 h2Anomal.GetYaxis().UnZoom()
 rectangle.Draw("same")
-cnv.SaveAs("gaindrop_2d_anomaly_blackened.pdf")
-cnv.SaveAs("gaindrop.pdf")
+cnv.SaveAs(fnameout+"gaindrop_2d_anomaly_blackened.pdf")
+cnv.SaveAs(fnameout+"gaindrop.pdf")
 
 cnv = TCanvas("cnv","",500,500)
 ROOT.gPad.SetTicks(1,1)
@@ -182,8 +186,8 @@ if(logz): ROOT.gPad.SetLogz()
 h2Full.Draw("scat same")
 h2Full.GetYaxis().UnZoom()
 rectangle.Draw("same")
-cnv.SaveAs("gaindrop_2d_fullarea.pdf")
-cnv.SaveAs("gaindrop.pdf)")
+cnv.SaveAs(fnameout+"gaindrop_2d_fullarea.pdf")
+cnv.SaveAs(fnameout+"gaindrop.pdf)")
 
 print("=================== summary ===================")
 print("avg in problematic blob=%g, rect=%g, rest=%g --> drop(blob)=%g, drop(rect)=%g for blob area fraction=%.1f%%" % (avg_blob, avg_rect, avg_rest, drop_blob, drop_rect, area_blob/area_full*100))
