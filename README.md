@@ -1,5 +1,10 @@
 # sTGC.GainDrop
 
+# Prepare for analysis:
+- `mkdir root`
+- `mkdir pdf`
+- put the root file of the X-ray scan in root/
+
 # Run initially like:
 `python gaindrop.py -f Your.sTGC.Gap.Xray.Scan.File.root -g 3`
 
