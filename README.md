@@ -12,7 +12,7 @@ where,
 - the -f argument is the input file
 - the -g argument is the gap number
 
-Look at the output 2d plot in order to define the rectangle apparatus and once the rectangle is defined you run again with more arguments as in the instructions below
+Look at the output 2d plot in the pdf/ directory to define the rectangle apparatus and once the rectangle is defined you run again with more arguments as in the instructions below
 
 # Step 2:
 `python gaindrop.py -f Your.sTGC.Gap.Xray.Scan.File.root -g 3 -x 400 -y 700 -c 250,200 -z 200 -l 1`
