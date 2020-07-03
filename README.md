@@ -23,4 +23,7 @@ where,
 - the -z argument is the threshold current above which you want to calculate the baseline. Usually it should be a bit smaller than the current value you can read in the corners of the histogram where there's no detector...
 - the -l argument is just decifing if the z-axis is plotted in log scale for the 2D plots
 
-The calculation of the area of the blob as well as the average gain-drop in that blob will be done in this step and the rectangle you’ve chosen will be shown on the plot.
+# Notes:
+- The calculation of the area of the blob as well as the average gain-drop in that blob will be done in this step and the rectangle you’ve chosen will be shown on the plots in the pdf/ directory.
+- You will probably need to play with the rectangle definition (width, height and center) as well as the threshold currrent to optimise the analysis. This is done by eye in one or two (quick!) iterations.
+- This optimisation steps should be repeated untill you see that (a) the blob you see in the plots is reasonably covering the anomaly area, and (b) the entire area of the gap is "blackened" properly, but only the gap area of course (i.e. no significant black area covering the range where there's no detector)
